@@ -89,7 +89,7 @@ orders = {
     'morskoi_fort': '⚓Морской форт',
     'morko': '⚓️',
     'cover': '🛡 Защита',
-    'attack': '⚔ Атака',
+    'attack': '⚔️Атака',
     'cover_symbol': '🛡',
     'hero': '🏅Герой',
     'corovan': '/go',
@@ -104,7 +104,8 @@ orders = {
     'sell': 'Скупка предметов',
     'lvl_def': '+1 🛡Защита',
     'lvl_atk': '+1 ⚔️Атака',
-    'lvl_off': 'Выключен'
+    'lvl_off': 'Выключен',
+    'snowball': '❄️Снежки'
 }
 
 captcha_answers = {
@@ -147,7 +148,7 @@ last_captcha_id = 0
 gold_to_left = 0
 
 bot_enabled = True
-arena_enabled = False
+arena_enabled = True
 les_enabled = False
 peshera_enabled = False
 moovan_enabled = False
@@ -330,7 +331,6 @@ def parse_text(text, username, message_id):
                 if 9 <= curhour <= 23:
                     log('Включаем флаг - арена запущена')
                     arena_running = True
-                    action_list.append(orders['castle_menu'])
                     action_list.append('❄️Снежки')
                     log('Топаем на арену')
                 else:
@@ -384,6 +384,8 @@ def parse_text(text, username, message_id):
                 update_order(orders['morskoi_fort'])
             elif text.find('🛡') != -1:
                 update_order(castle)
+            elif text.find('❄️') != -1
+                update_order(orders['snowball'])
 
         # send_msg(pref, admin_username, 'Получили команду ' + current_order['order'] + ' от ' + username)
         if username == admin_username:
