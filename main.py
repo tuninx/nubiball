@@ -384,7 +384,7 @@ def parse_text(text, username, message_id):
                 update_order(orders['morskoi_fort'])
             elif text.find('🛡') != -1:
                 update_order(castle)
-            elif text.find('❄️') != -1
+            elif text.find('❄️') != -1:
                 update_order(orders['snowball'])
 
         # send_msg(pref, admin_username, 'Получили команду ' + current_order['order'] + ' от ' + username)
