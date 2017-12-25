@@ -613,10 +613,6 @@ def fwd(pref, to, message_id):
 def update_order(order):
     current_order['order'] = order
     current_order['time'] = time()
-    if order == castle:
-        action_list.append(orders['cover'])
-    else:
-        action_list.append(orders['attack'])
     action_list.append(order)
 
 
